@@ -1,6 +1,4 @@
-import React, { useState, useEffect } from 'react';
-import Container from '@mui/material/Container';
-
+import React, { useEffect, useState } from 'react';
 import Header from './Header';
 import Content from './Content';
 import { getLikedSubmissions } from './service/mockServer';
@@ -9,20 +7,18 @@ function App() {
   const [likedSubmissions, setLikedSubmissions] = useState([]);
 
   useEffect(() => {
-    async function fetchLikedSubmissions() {
+    const fetchLikedSubmissions = async () => {
       const submissions = await getLikedSubmissions();
       setLikedSubmissions(submissions);
-    }
+    };
     fetchLikedSubmissions();
   }, []);
 
   return (
-    <>
+    <div>
       <Header />
-      <Container>
-        <Content likedSubmissions={likedSubmissions} />
-      </Container>
-    </>
+      <Content likedSubmissions={likedSubmissions} />
+    </div>
   );
 }
 
