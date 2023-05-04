@@ -1,17 +1,14 @@
 import React from 'react';
-import Box from '@mui/material/Box';
-import Typography from '@mui/material/Typography';
+import { Typography } from '@material-ui/core';
 
-export default function Content({ likedSubmissions }) {
+function Content(props) {
   return (
-    <Box sx={{ marginTop: 3 }}>
-      <Typography variant="h4">Liked Form Submissions</Typography>
-
-      {likedSubmissions.map((submission) => (
-        <Typography key={submission.timestamp} variant="body1" sx={{ fontStyle: 'italic', marginTop: 1 }}>
-          {submission.text}
-        </Typography>
+    <div>
+      {props.likedSubmissions.map((submission) => (
+        <Typography key={submission.timestamp}>{submission.text}</Typography>
       ))}
-    </Box>
+    </div>
   );
 }
+
+export default Content;
