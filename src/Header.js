@@ -7,9 +7,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import MenuIcon from '@mui/icons-material/Menu';
-import { createMockFormSubmission } from './service/mockServer';
 
 import Toast from './Toast';
+import { createMockFormSubmission } from './service/mockServer';
 
 export default function Header({ setLikedSubmissions }) {
   const [showToast, setShowToast] = React.useState(false);
